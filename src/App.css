@@ -1,38 +1,254 @@
-.App {
+/* 전체 문서에서 스크롤바를 얇게 만들기 */
+::-webkit-scrollbar {
+  width: 8px; /* 세로 스크롤바의 두께 */
+  height: 8px; /* 가로 스크롤바의 두께 */ 
+}
+
+/* 스크롤바 트랙(배경) 스타일 */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* 트랙의 배경색 */
+}
+
+/* 스크롤바 핸들(사용자가 드래그하는 부분) 스타일 */
+::-webkit-scrollbar-thumb {
+  background-color: #888; /* 핸들의 배경색 */
+  border-radius: 10px; /* 핸들의 둥근 모서리 */
+  border: 2px solid #f1f1f1; /* 핸들의 테두리 */
+}
+
+/* 핸들이 호버 상태일 때 */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* 핸들 호버 시 색상 */
+}
+
+
+/*to do list 스타일 start-----*/
+
+/*폰트*/
+@import url('https://fastly.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.1/packages/wanted-sans/fonts/webfonts/variable/split/WantedSansVariable.min.css');
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
+
+
+:root{
+  --font-wt: "Wanted Sans Variable", "Wanted Sans", -apple-system, BlinkMacSystemFont, system-ui, "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  --font-pr: 'Pretendard Variable', sans-serif;
+}
+
+.none{
+  display: none;
+}
+
+.ab{
+  position: absolute;
+}
+
+.ab_cen{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: 0;
+}
+
+i{
+  font-style: inherit;
+}
+
+li{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+body{
+  background-color: #DBF0FF;
+  font-family: var(--font-pr);
+}
+
+* {
+  background: #0000;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.App h1 {
+  font-size: 1.65rem;
+  padding: 0 30px;
+  margin-bottom: 15px;
+}
+
+.App .slick-slider .light {
+  /* background: #6CCDFF; */
+  background: #3CA5ED;
+  background: linear-gradient(180deg, rgba(60, 165, 237, 1) 0%, rgba(60, 165, 237, 1) 60%, rgba(108, 205, 255, 1) 100%);
+}
+
+.App .slick-slider .dark {
+  /* background: #192C8B; */
+  background: #192C8B;
+  background: linear-gradient(180deg,rgba(25, 44, 139, 1) 0%, rgba(25, 44, 139, 1) 60%, rgba(72, 43, 255, 1) 100%);
+}
+
+.App .slick-slider {
+  height: 108%;
+}
+
+.App .slick-slider .slick-list, .App .slick-slider .slick-track{
+  height: 100%;
+}
+
+.App .slick-slider .slide{
+  color: #fff;
+  height: 580px;
+  padding: 50px 0;
+  box-sizing: border-box;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App .wt_time{
+  color: #fff;
+  top: 165px;
+  font-size: 20px;
+  font-weight: 300;
+  letter-spacing: -1px;
+  z-index: 1;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.App .slick-slider .slide > div{
+  margin-top: 50px;
+  letter-spacing: -1px;
+}
+
+.App .slick-slider .slide > div h2{
+  font-size: 45px;
+  font-weight: 600;
+}
+
+.App .slick-slider .slide .wt_state {
+  font-size: 60px;
+  font-weight: 100;
+  margin: 30px 0 60px;
+}
+
+.App .slick-slider .slide > div p {
+  font-size: 25px;
+}
+
+.App .slick-slider .slide .wt_tem,
+.App .slick-slider .slide .wt_hum {
+  display: inline-block;
+  width: 190px;
+  margin: 0 auto;
+  text-align: right;
+  margin: 5px 0;
+  font-weight: 300;
+}
+
+.App .slick-slider .slide > div p i{
+  display: inline-block;
+  float: left;
+  font-weight: 500;
+}
+
+.App .slick-slider .slick-dots{
+  bottom: 75px;
+}
+
+.App .slick-slider .slick-dots li button:before{
+  color: #fff;
+  font-size: 10px;
+}
+
+@media (min-width: 1025px){
+  .App {
+    background: #fff;
+    border: 11px solid #111;
+    border-radius: 50px;
+    box-shadow: 0 10px 50px #0000004d;
+    box-sizing: border-box;
+    height: 700px;
+    left: 50%;
+    margin: 0 auto;
+    max-width: 380px;
+    overflow: hidden;
+    padding: 65px 0px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 92%;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.App .wt_box {
+  height: 115px;
+  overflow-y: scroll;
 }
 
-.App-link {
-  color: #61dafb;
+@media (max-width: 1024px){
+  .App {
+    background: #fff;
+    border: 11px solid #111;
+    border-radius: 50px;
+    box-sizing: border-box;
+    height: 700px;
+    left: 50%;
+    margin: 0 auto;
+    max-width: 380px;
+    overflow: hidden;
+    padding: 65px 0px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 92%;
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width: 500px){
+  .App {
+    border: 0;
+    border-radius: 0;
+    width: 100%;
+    top: 0;
+    transform: translate(-50%,  0%);
+    height: 100vh;
+    max-width: inherit;
   }
-  to {
-    transform: rotate(360deg);
+
+  .App h1 {
+    font-size: 1.4rem;
+    padding: 0 30px;
+    margin-bottom: 15px;
   }
+
+  .App .slick-slider .slide{
+    height: 100vh;
+  }
+
+  .App .slick-slider .slide > div h2{
+    font-size: 2.2rem;
+  }
+
+  .App .slick-slider .slide .wt_state{
+    font-size: 2.85rem;
+  }
+
+  .App .slick-slider .slide .wt_tem, .App .slick-slider .slide .wt_hum{
+    font-size: 1.35rem;
+    margin: 10px 0;
+    width: 80%;
+  }
+
+  .App .wt_box{
+    height: inherit;
+    overflow-y: hidden;
+  }
+  
 }

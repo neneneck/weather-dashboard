@@ -1,0 +1,12 @@
+{
+    "main": {
+      "temp": 17.5,
+      "feels_like": 17.1
+    },
+    "weather": [
+      {
+        "description": "clear sky"
+      }
+    ]
+  }
+  
